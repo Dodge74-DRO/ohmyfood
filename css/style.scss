@@ -1,0 +1,30 @@
+/****** General ***********/
+* {
+    font-family: 'Roboto';
+}
+
+:root {
+    --main-grl-color: #99E2D0;  /* vert clair */
+    --main-gr-color: #008766;   /* vert foncé */
+    --main-bll-color: #89C8FA;  /* bleu clair */
+    --main-bl-color: #003A68;   /* bleu foncé */
+    --main-mv-color: #9356DC;   /* mauve */
+}
+
+body {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:0px ;
+}
+
+h1 {
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
