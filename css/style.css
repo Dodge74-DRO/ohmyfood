@@ -1,15 +1,32 @@
 @charset "UTF-8";
 /****** General ***********/
+/* fonds gris */
+/* vert clair */
+/* vert foncé */
+/* bleu clair */
+/* bleu foncé */
+/* mauve */
+/* mauve */
+/* gris-clair */
+/* gris-clair */
 * {
   font-family: "Roboto";
 }
 
-:root {
-  --main-grl-color: #99E2D0; /* vert clair */
-  --main-gr-color: #008766; /* vert foncé */
-  --main-bll-color: #89C8FA; /* bleu clair */
-  --main-bl-color: #003A68; /* bleu foncé */
-  --main-mv-color: #9356DC; /* mauve */
+.text-16-medium {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.text-18-ligth {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 body {
@@ -17,15 +34,63 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
+  background-color: #F6F6F6;
 }
 
-h1 {
+.entete {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.entete .entete__titre {
+  height: 63px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   font-family: "Shrikhand", sans-serif;
   font-size: 30px;
   font-weight: bold;
 }
+.entete .entete__localisation {
+  height: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 19px;
+  background-color: #EAEAEA;
+  filter: drop-shadow(0px 4px 4px rgb(191, 191, 191));
+}
 
-h2 {
-  font-size: 18px;
-  font-weight: bold;
+.entete_restaurants {
+  width: 84%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.button {
+  height: 50px;
+  width: 218px;
+  margin-top: 27px;
+  margin-bottom: 57px;
+  border-style: none;
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border-radius: 25px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0px 4px 4px rgb(191, 191, 191));
 }/*# sourceMappingURL=style.css.map */
