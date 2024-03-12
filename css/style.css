@@ -13,17 +13,51 @@
   font-family: "Roboto";
 }
 
-.text-16-medium {
-  font-size: 16px;
-  font-weight: 500;
+a {
   text-decoration: none;
 }
 
-.text-18-ligth {
-  font-size: 18px;
+.text-16 {
+  font-size: 16px;
+  text-decoration: none;
+}
+.text-16-ligth {
   font-weight: 300;
 }
+.text-16-medium {
+  font-weight: 500;
+}
+.text-16-bold {
+  font-weight: bold;
+}
 
+.text-18 {
+  font-size: 18px;
+}
+.text-18-ligth {
+  font-weight: 300;
+}
+.text-18-medium {
+  font-weight: 500;
+}
+.text-18-bold {
+  font-weight: bold;
+}
+
+.text-24 {
+  font-size: 24px;
+}
+.text-24-ligth {
+  font-weight: 300;
+}
+.text-24-medium {
+  font-weight: 500;
+}
+.text-24-bold {
+  font-weight: bold;
+}
+
+h1,
 h2 {
   font-size: 24px;
   font-weight: bold;
@@ -34,37 +68,50 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
-  background-color: #F6F6F6;
+  background-color: #eaeaea;
 }
 
-.entete {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.entete .entete__titre {
-  height: 63px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+/* Header */
+header {
+  position: relative;
   background-color: white;
+  width: 100%;
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+header .entete__logo {
+  display: block;
+  height: 30px;
+  width: 162px;
+}
+
+/* MAIN */
+.localisation {
+  width: 100%;
+  height: 50px;
+  background-color: #F6F6F6;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Shrikhand", sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-}
-.entete .entete__localisation {
-  height: 50px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-top: 0px;
   margin-bottom: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 19px;
-  background-color: #EAEAEA;
-  filter: drop-shadow(0px 4px 4px rgb(191, 191, 191));
+}
+
+input[type=text] {
+  width: 109px;
+  height: 19px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #F6F6F6;
 }
 
 .entete_restaurants {
@@ -79,18 +126,203 @@ body {
   text-align: center;
 }
 
-.button {
-  height: 50px;
+.bouton__explorez {
   width: 218px;
+  height: 50px;
   margin-top: 27px;
   margin-bottom: 57px;
-  border-style: none;
+  border-radius: 25px;
+  border: none;
   color: white;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  border-radius: 25px;
-  box-sizing: border-box;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bouton__explorez:hover {
+  filter: brightness(1.1);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.fonctionnement {
+  background-color: white;
+  padding: 48px 0px 60px 20px;
+}
+.fonctionnement .fonctionnement__bar {
+  padding: 0px 20px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.fonctionnement .fonctionnement__bar__nombre__bouton {
+  position: relative;
+  padding-left: 12px;
+  width: 95%;
+}
+.fonctionnement .fonctionnement__bar__nombre {
+  display: inline-block;
+  margin: 0px;
+  position: absolute;
+  left: 0px;
+  top: 24px;
+  background-color: #9356DC;
+  height: 24px;
+  width: 24px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 24px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  z-index: 1;
+}
+.fonctionnement .fonctionnement__bar__button {
+  height: 72.38px;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  padding-left: 33px;
   display: flex;
   align-items: center;
+  gap: 27px;
+  color: #7E7E7E;
+  z-index: 0;
+}
+.fonctionnement .fonctionnement__bar__button:hover {
+  filter: brightness(1, 1);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
+}
+.fonctionnement .fonctionnement__bar__button:hover .fonctionnement__bar__button__logo {
+  color: #9356DC;
+}
+.fonctionnement .fonctionnement__bar__text {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  /*position:relative;
+  left:74px;*/
+}
+
+/****** RESTAURANTS ******/
+.restaurants {
+  width: 100%;
+  max-width: 1440px;
+  padding: 54px 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section_restaurants {
+  box-sizing: border-box;
+  margin-top: 35px;
+  width: 100%;
+}
+.section_restaurants .section_restaurants__titre {
+  margin-left: 20px;
+}
+
+.section_restaurants_cartes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 96%;
+  margin-left: 2%;
+  gap: 18px;
+}
+
+/*.section_restaurants_cartes__lien {
+    justify-content: stretch;
+    text-decoration: none;
+    margin-left: 100px;
+}*/
+.carte_restaurant {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 100%;
+  height: 251px;
+  position: relative;
+}
+.carte_restaurant .carte_restaurant__nouveau {
+  display: flex;
   justify-content: center;
-  filter: drop-shadow(0px 4px 4px rgb(191, 191, 191));
+  align-items: center;
+  height: 29px;
+  width: 80px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #99E2D0;
+  color: #008766;
+  z-index: 1;
+}
+.carte_restaurant .carte_restaurant__image {
+  width: 100%;
+  height: 174px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+.carte_restaurant .carte_restaurant_bas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  margin-left: 4%;
+  color: black;
+  text-decoration: none;
+}
+.carte_restaurant .carte_restaurant_bas__nom {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
+.carte_restaurant .carte_restaurant_bas__lieu {
+  margin-top: 5px;
+}
+.carte_restaurant .carte_restaurant_bas__coeur {
+  height: 21px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--vide {
+  font-size: 25px;
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
+}
+.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein {
+  font-size: 25px;
+  opacity: 0;
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
+}
+.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover {
+  color: transparent;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: 400ms;
+  transition-duration: 400ms;
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
