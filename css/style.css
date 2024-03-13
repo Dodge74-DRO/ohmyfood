@@ -17,6 +17,14 @@ a {
   text-decoration: none;
 }
 
+h2,
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .text-16 {
   font-size: 16px;
   text-decoration: none;
@@ -57,24 +65,14 @@ a {
   font-weight: bold;
 }
 
-h1,
-h2,
-h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 body {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
-  background-color: #eaeaea;
 }
 
-/* Header */
+/*** HEADER ***/
 header {
   position: relative;
   background-color: white;
@@ -92,6 +90,10 @@ header .entete__logo {
 }
 
 /* MAIN */
+main {
+  background-color: #eaeaea;
+}
+
 .localisation {
   width: 100%;
   height: 50px;
@@ -238,11 +240,6 @@ input[type=text] {
   gap: 18px;
 }
 
-/*.section_restaurants_cartes__lien {
-    justify-content: stretch;
-    text-decoration: none;
-    margin-left: 100px;
-}*/
 .carte_restaurant {
   background-color: white;
   border-radius: 15px;
@@ -331,4 +328,35 @@ input[type=text] {
 }
 .carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover::after {
   opacity: 0;
+}
+
+/*** FOOTER ***/
+.footer_bloc {
+  background-color: #353535;
+  color: White;
+  padding: 22px 25px 22px 25px;
+  display: flex;
+  flex-direction: column;
+}
+.footer_bloc .footer__titre {
+  font-family: "shrikhand";
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px 0px 26px 0px;
+}
+.footer_bloc .footer__mentions {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.footer_bloc .footer__lien {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  color: white;
+  font-weight: 300;
+}
+.footer_bloc .footer__lien .footer__lien__texte {
+  margin: 0px;
 }/*# sourceMappingURL=style.css.map */
