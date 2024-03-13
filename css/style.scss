@@ -77,9 +77,12 @@ a {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 body {
@@ -139,7 +142,7 @@ input[type='text'] {
     width: 84%;
     margin-left: 8%;
     margin-right: 8%;
-    margin-top: 10px;
+    margin-top: 39px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,7 +154,7 @@ input[type='text'] {
 .bouton__explorez {
     width: 218px;
     height: 50px;
-    margin-top: 27px;
+    margin-top: 15px;
     margin-bottom: 57px;
     border-radius: 25px;
     border: none;
@@ -177,6 +180,7 @@ input[type='text'] {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 26px;
         gap: 25px;
     }
 
@@ -240,7 +244,7 @@ input[type='text'] {
 .restaurants {
     width: 100%;
     max-width: 1440px;
-    padding: 54px 0px;
+    padding: 59px 0px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -249,7 +253,6 @@ input[type='text'] {
 
 .section_restaurants {
     box-sizing: border-box;
-    margin-top: 35px;
     width: 100%;
 
     .section_restaurants__titre {
@@ -278,7 +281,7 @@ input[type='text'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 100%;
     height: 251px;
     position: relative;
@@ -351,18 +354,21 @@ input[type='text'] {
             position: absolute;
             bottom: 33px;
             right: 25px;
-            }
-
-        .carte_restaurant_bas__coeur--plein:hover {
             color: transparent;
             background-image: linear-gradient(to bottom, $mauve-color, $mauve-second-color);
             -webkit-background-clip: text;
             background-clip:text;
             transition-property: all;
             transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
-            transition-delay: 400ms;
-            transition-duration: 400ms;
+            transition-delay: 500ms;
+            transition-duration: 500ms;
+            }
+
+        .carte_restaurant_bas__coeur--plein:hover {
             opacity: 1;
+        }
+        .carte_restaurant_bas__coeur--plein:hover::after {
+            opacity: 0;
         }
     }
 }
