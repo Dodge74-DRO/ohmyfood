@@ -176,69 +176,69 @@ input[type='text'] {
     background-color: white;
     padding: 48px 0px 60px 20px;
 
-    .fonctionnement__bar {
+    .fonctionnement_bar {
         padding: 0px 20px 0px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 26px;
         gap: 25px;
-    }
 
-    .fonctionnement__bar__nombre__bouton {
-        position: relative;
-        padding-left: 12px;
-        width: 95%;
-    }
+        .fonctionnement_bar_etape {
+            position: relative;
+            padding-left: 12px;
+            width: 95%;
 
-    .fonctionnement__bar__nombre {
-        display: inline-block;
-        margin: 0px;
-        position: absolute;
-        left: 0px;
-        top: 24px;
-        background-color: $mauve-color;
-        height: 24px;
-        width: 24px;
-        line-height: 26px;
-        text-align: center;
-        border-radius: 24px;
-        font-family: "Roboto", sans-serif;
-        font-size: 14px;
-        color: white;
-        font-weight: 500;
-        z-index: 1;
-    }
+            .fonctionnement_bar_etape__nombre {
+                display: inline-block;
+                margin: 0px;
+                position: absolute;
+                left: 0px;
+                top: 24px;
+                background-color: $mauve-color;
+                height: 24px;
+                width: 24px;
+                line-height: 26px;
+                text-align: center;
+                border-radius: 24px;
+                font-family: "Roboto", sans-serif;
+                font-size: 14px;
+                color: white;
+                font-weight: 500;
+                z-index: 1;
+            }
 
-    .fonctionnement__bar__button {
-        height: 72.38px;
-        background-color: $greyligth-color;
-        border-radius: 20px;
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-        padding-left: 33px;
-        display: flex;
-        align-items: center;
-        gap: 27px;
-        color: #7E7E7E;
-        z-index: 0;
+            .fonctionnement_bar_etape__bouton {
+                height: 72.38px;
+                background-color: $greyligth-color;
+                border-radius: 20px;
+                box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+                padding-left: 33px;
+                display: flex;
+                align-items: center;
+                gap: 27px;
+                color: #7E7E7E;
+                z-index: 0;
+                &:hover{
+                    filter: brightness(1, 1);
+                    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
+                    .fonctionnement_bar_etape_bouton__logo {
+                        color: $mauve-color;
+                    }
+                }
 
-        &:hover {
-            filter: brightness(1, 1);
-            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
-
-            .fonctionnement__bar__button__logo {
-                color: $mauve-color;
+                .fonctionnement_bar_etape_bouton__texte {
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    color:black;
+                    /*position:relative;
+                    left:74px;*/
+                }
             }
         }
     }
 
-    .fonctionnement__bar__text {
-        font-size: 16px;
-        font-weight: 500;
-        text-decoration: none;
-        /*position:relative;
-        left:74px;*/
-    }
 }
 
 /****** RESTAURANTS ******/
@@ -268,9 +268,9 @@ input[type='text'] {
     margin-left: 2%;
     gap: 18px;
 }
-
 .carte_restaurant {
-    background-color: white;
+    position: relative;
+    background-color:white;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -278,7 +278,7 @@ input[type='text'] {
     margin-top: 15px;
     width: 100%;
     height: 251px;
-    position: relative;
+}
 
     .carte_restaurant__nouveau {
         display: flex;
@@ -365,7 +365,7 @@ input[type='text'] {
             opacity: 0;
         }
     }
-}
+
 /*** FOOTER ***/
 .footer_bloc {
 	background-color:$grey-color;

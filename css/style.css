@@ -154,7 +154,7 @@ input[type=text] {
   background-color: white;
   padding: 48px 0px 60px 20px;
 }
-.fonctionnement .fonctionnement__bar {
+.fonctionnement .fonctionnement_bar {
   padding: 0px 20px 0px 0px;
   display: flex;
   flex-direction: column;
@@ -162,12 +162,12 @@ input[type=text] {
   margin-top: 26px;
   gap: 25px;
 }
-.fonctionnement .fonctionnement__bar__nombre__bouton {
+.fonctionnement .fonctionnement_bar .fonctionnement_bar_etape {
   position: relative;
   padding-left: 12px;
   width: 95%;
 }
-.fonctionnement .fonctionnement__bar__nombre {
+.fonctionnement .fonctionnement_bar .fonctionnement_bar_etape .fonctionnement_bar_etape__nombre {
   display: inline-block;
   margin: 0px;
   position: absolute;
@@ -185,7 +185,7 @@ input[type=text] {
   font-weight: 500;
   z-index: 1;
 }
-.fonctionnement .fonctionnement__bar__button {
+.fonctionnement .fonctionnement_bar .fonctionnement_bar_etape .fonctionnement_bar_etape__bouton {
   height: 72.38px;
   background-color: #F6F6F6;
   border-radius: 20px;
@@ -197,17 +197,18 @@ input[type=text] {
   color: #7E7E7E;
   z-index: 0;
 }
-.fonctionnement .fonctionnement__bar__button:hover {
+.fonctionnement .fonctionnement_bar .fonctionnement_bar_etape .fonctionnement_bar_etape__bouton:hover {
   filter: brightness(1, 1);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
 }
-.fonctionnement .fonctionnement__bar__button:hover .fonctionnement__bar__button__logo {
+.fonctionnement .fonctionnement_bar .fonctionnement_bar_etape .fonctionnement_bar_etape__bouton:hover .fonctionnement_bar_etape_bouton__logo {
   color: #9356DC;
 }
-.fonctionnement .fonctionnement__bar__text {
+.fonctionnement .fonctionnement_bar .fonctionnement_bar_etape .fonctionnement_bar_etape__bouton .fonctionnement_bar_etape_bouton__texte {
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
+  color: black;
   /*position:relative;
   left:74px;*/
 }
@@ -241,6 +242,7 @@ input[type=text] {
 }
 
 .carte_restaurant {
+  position: relative;
   background-color: white;
   border-radius: 15px;
   display: flex;
@@ -249,9 +251,9 @@ input[type=text] {
   margin-top: 15px;
   width: 100%;
   height: 251px;
-  position: relative;
 }
-.carte_restaurant .carte_restaurant__nouveau {
+
+.carte_restaurant__nouveau {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,7 +268,8 @@ input[type=text] {
   color: #008766;
   z-index: 1;
 }
-.carte_restaurant .carte_restaurant__image {
+
+.carte_restaurant__image {
   width: 100%;
   height: 174px;
   border-top-left-radius: 20px;
@@ -275,7 +278,8 @@ input[type=text] {
      object-fit: cover;
   z-index: 0;
 }
-.carte_restaurant .carte_restaurant_bas {
+
+.carte_restaurant_bas {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -285,30 +289,33 @@ input[type=text] {
   color: black;
   text-decoration: none;
 }
-.carte_restaurant .carte_restaurant_bas__nom {
+
+.carte_restaurant_bas__nom {
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
   margin-top: 16px;
   margin-bottom: 0px;
 }
-.carte_restaurant .carte_restaurant_bas__lieu {
+
+.carte_restaurant_bas__lieu {
   margin-top: 5px;
 }
-.carte_restaurant .carte_restaurant_bas__coeur {
+
+.carte_restaurant_bas__coeur {
   height: 21px;
   width: 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--vide {
+.carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--vide {
   font-size: 25px;
   position: absolute;
   bottom: 33px;
   right: 25px;
 }
-.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein {
+.carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein {
   font-size: 25px;
   opacity: 0;
   position: absolute;
@@ -323,10 +330,10 @@ input[type=text] {
   transition-delay: 500ms;
   transition-duration: 500ms;
 }
-.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover {
+.carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover {
   opacity: 1;
 }
-.carte_restaurant .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover::after {
+.carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover::after {
   opacity: 0;
 }
 

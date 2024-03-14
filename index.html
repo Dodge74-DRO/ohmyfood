@@ -28,40 +28,42 @@
             <p class="text-18-ligth">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
             <a class="bouton__explorez text-16-medium" href="#Nos_restaurants">Explorer nos restaurants</a>
         </div>
-        <div class="fonctionnement">
+<!--***** BLOC FONCTIONNEMENT ***** -->
+<div class="fonctionnement">
             <div>
                 <h2 class="fonctionnement__titre">Fonctionnement</h2>
             </div>
-            <div class="fonctionnement__bar">
-                <div class="fonctionnement__bar__nombre__bouton">
-                    <p class="fonctionnement__bar__nombre">1</p>
-                    <div class="fonctionnement__bar__button">
-                        <i class="fa-solid fa-mobile-screen-button fonctionnement__bar__button__logo" aria-hidden="true"></i>
-                        <p class="fonctionnement__bar__text">Choississez un restaurant</p>
+            <div class="fonctionnement_bar">
+                <div class="fonctionnement_bar_etape">
+                    <p class="fonctionnement_bar_etape__nombre">1</p>
+                    <div class="fonctionnement_bar_etape__bouton">
+                        <i class="fa-solid fa-mobile-screen-button fonctionnement_bar_etape_bouton__logo"></i>
+                        <p class="fonctionnement_bar_etape_bouton__texte">Choississez un restaurant</p>
                     </div>
                 </div>
-                <div class="fonctionnement__bar__nombre__bouton">
-                    <p class="fonctionnement__bar__nombre">2</p>
-                    <div class="fonctionnement__bar__button">
-                        <i class="fa-solid fa-list-ul fonctionnement__bar__button__logo" aria-hidden="true"></i>
-                        <p class="fonctionnement__bar__text">Composez votre menu</p>
+                <div class="fonctionnement_bar_etape">
+                    <p class="fonctionnement_bar_etape__nombre">2</p>
+                    <div class="fonctionnement_bar_etape__bouton">
+                        <i class="fa-solid fa-list-ul fonctionnement_bar_etape_bouton__logo"></i>
+                        <p class="fonctionnement_bar_etape_bouton__texte">Composez votre menu</p>
                     </div>
                 </div>
-                <div class="fonctionnement__bar__nombre__bouton">
-                    <p class="fonctionnement__bar__nombre">3</p>
-                    <div class="fonctionnement__bar__button">
-                        <i class="fa-solid fa-store fonctionnement__bar__button__logo" aria-hidden="true"></i>
-                        <p class="fonctionnement__bar__text">Dégustez au restaurant</p>
+                <div class="fonctionnement_bar_etape">
+                    <p class="fonctionnement_bar_etape__nombre">3</p>
+                    <div class="fonctionnement_bar_etape__bouton">
+                        <i class="fa-solid fa-store fonctionnement_bar_etape_bouton__logo"></i>
+                        <p class="fonctionnement_bar_etape_bouton__texte">Dégustez au restaurant</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="restaurants">
+<!--***** BLOC RESDTAURANTS ***** -->
+        <div class="restaurants" id="Nos_restaurants">
             <section class="section_restaurants" id="restaurants">
                 <h3 class="section_restaurants__titre">Restaurants</h3>
                 <div class="section_restaurants_cartes">
-                    <a class=".section_restaurants_cartes__lien" href="#">
-                        <article class="carte_restaurant">
+                    <article class="carte_restaurant">
+                        <a class="carte_restaurant__lien" href="">
                             <div class="carte_restaurant__nouveau">
                                 <p class=>Nouveau</p>
                             </div>
@@ -69,15 +71,15 @@
                             <div class="carte_restaurant_bas">
                                 <h3 class="carte_restaurant_bas__nom">La palette du goût</h3>
                                 <p class="carte_restaurant_bas__lieu">Ménilmontant</p>
-                                <div class="carte_restaurant_bas__coeur">
-                                    <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
-                                    <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
-                                </div>
                             </div>
-                        </article>
-                    </a>
-                    <a class=".section_restaurants_cartes__lien" href="#">
-                        <article class="carte_restaurant">
+                        </a>
+                        <div class="carte_restaurant_bas__coeur">
+                            <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
+                            <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
+                        </div>
+                    </article>
+                    <article class="carte_restaurant">
+                        <a class=".section_restaurants_cartes__lien" href="#">
                             <div class="carte_restaurant__nouveau">
                                 <p class=>Nouveau</p>
                             </div>
@@ -85,39 +87,39 @@
                             <div class="carte_restaurant_bas">
                                 <h3 class="carte_restaurant_bas__nom">La note enchantée</h3>
                                 <p class="carte_restaurant_bas__lieu">Charonne</p>
-                                <div class="carte_restaurant_bas__coeur">
-                                    <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
-                                    <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
-                                </div>
                             </div>
-                        </article>
-                    </a>
-                    <a class=".section_restaurants_cartes__lien" href="#">
-                        <article class="carte_restaurant">
+                        </a>
+                        <div class="carte_restaurant_bas__coeur">
+                            <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
+                            <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
+                        </div>
+                    </article>
+                    <article class="carte_restaurant">
+                        <a class=".section_restaurants_cartes__lien" href="#">
                             <img class="carte_restaurant__image"src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo d'un plat du restaurant à la française">
                             <div class="carte_restaurant_bas">
                                 <h3 class="carte_restaurant_bas__nom">À la française</h3>
                                 <p class="carte_restaurant_bas__lieu">Cité Rouge</p>
-                                <div class="carte_restaurant_bas__coeur">
-                                    <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
-                                    <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
-                                </div>
                             </div>
-                        </article>
-                    </a>
-                    <a class=".section_restaurants_cartes__lien" href="#">
-                        <article class="carte_restaurant">
+                        </a>
+                        <div class="carte_restaurant_bas__coeur">
+                            <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
+                            <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
+                        </div>
+                    </article>
+                    <article class="carte_restaurant">
+                        <a class=".section_restaurants_cartes__lien" href="#">
                             <img class="carte_restaurant__image" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Photo d'un plat du restaurant le délice des sens">
                             <div class="carte_restaurant_bas">
                                 <h3 class="carte_restaurant_bas__nom">Le délice des sens</h3>
                                 <p class="carte_restaurant_bas__lieu">Folie-Méricourt</p>
-                                <div class="carte_restaurant_bas__coeur">
-                                    <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
-                                    <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
-                                </div>
                             </div>
-                        </article>
-                    </a>
+                        </a>
+                        <div class="carte_restaurant_bas__coeur">
+                            <i class="fa-regular fa-heart carte_restaurant_bas__coeur--vide"></i>
+                            <i class="fa-solid fa-heart carte_restaurant_bas__coeur--plein"></i>
+                        </div>
+                    </article>
                 </div>
             </section>
         </div>
@@ -135,7 +137,7 @@
                     <p class="footer__lien__texte">Devenez partenaire</p>
                 </a>
                 <a class="footer__lien" href="">Mentions légales</a>
-                <a class="footer__lien" href="mailto:ohmyfood@gmail.com">Contact</a>
+                <a class="footer__lien" href="mailto:avotreecoute@ohmyfood.fr">Contact</a>
             </div>
         </div>
     </footer>
