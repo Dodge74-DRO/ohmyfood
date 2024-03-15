@@ -76,7 +76,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin-fade-out 0s 0.1s forwards;
+  animation: spin-fade-out 0s 3s forwards;
   z-index: 9;
 }
 
@@ -92,10 +92,13 @@ h3 {
 }
 
 .tour-eiffel {
-  width: 105px;
-  height: 105px;
+  width: 110px;
+  height: 110px;
   color: #9356dc;
-  animation: 1500ms spin2 linear infinite;
+  position: relative;
+  left: -53px;
+  top: -2px;
+  /*animation: 1500ms spin2 linear infinite;*/
 }
 
 .loader::before {
