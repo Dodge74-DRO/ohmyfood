@@ -73,8 +73,8 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin-fade-out 0s 3s forwards;
-    z-index: 999;
+    animation: spin-fade-out 0s 0.1s forwards;
+    z-index: 9;
   }
     .loader{
     width: 100px;
@@ -90,7 +90,7 @@ h3 {
     width:105px;
     height: 105px;
     color:#9356dc;
-    animation: 2000ms spin2 linear infinite;
+    animation: 1500ms spin2 linear infinite;
   }
   .loader::before{
     width: 100px;
@@ -109,7 +109,7 @@ h3 {
 }
 @keyframes spin2{
     0%   {transform:rotate(  0deg)}
-    100% {transform:rotate(360deg)}
+    100% {transform:rotate(180deg)}
 }
 @keyframes spin-fade-out {
     0%   {transform: scaley(1)}
@@ -220,6 +220,10 @@ input[type='text'] {
         align-items: center;
         margin-top: 26px;
         gap: 25px;
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
 
         .fonctionnement_bar_etape {
             position: relative;
@@ -282,18 +286,24 @@ input[type='text'] {
 .restaurants {
     width: 100%;
     max-width: 1440px;
-    padding: 59px 0px;
+    padding: 59px 0px 66px 0px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (min-width: 768px) {
+        padding: 30px 0px 30px 0px;
+    }
 }
 
 .section_restaurants {
     box-sizing: border-box;
     width: 100%;
     .section_restaurants__titre {
-        margin-left: 20px;
+        margin-left: 2%;
+        @media (min-width: 768px) {
+            margin-left: 12.5%;
+        }
     }
 }
 
@@ -301,9 +311,14 @@ input[type='text'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 96%;
     margin-left: 2%;
-    gap: 18px;
+    width: 96%;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        margin-left: 12.5%;
+        width: 75%;
+        gap:7%;
+    }
 }
 .carte_restaurant {
     position: relative;
@@ -312,9 +327,10 @@ input[type='text'] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     width: 100%;
     height: 251px;
+    margin-top: 18px;
 }
 
     .carte_restaurant__nouveau {
@@ -343,7 +359,7 @@ input[type='text'] {
     }
 
     .carte_restaurant_bas {
-        width: 100%;
+        width: 96%;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
@@ -410,26 +426,41 @@ input[type='text'] {
     padding: 22px 25px 22px 25px;
     display: flex;
     flex-direction: column;
-    .footer__titre {
+    @media (min-width: 768px) {
+        flex-direction: row-reverse;
+    }
+.footer__titre {
         font-family: 'shrikhand';
         font-size: 18px;
         font-weight: 400;
         margin:0px 0px 26px 0px;
-    }
+        @media (min-width: 768px) {
+            margin:0px 20px 0px 50px;
+        }
+        }
     .footer__mentions{
         display: flex;
         flex-direction: column;
         gap:11px;
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
     }
     .footer__lien {
         align-items: center;
         display: flex;
         flex-direction: row;
+        font-size: 16px;
         gap:11px;
         color: white;
         font-weight: 300;
-        .footer__lien__texte {
+            .footer__lien__texte {
             margin:0px;
+        }
+    }
+    .footer__txt_ss_logo {
+        @media (min-width: 768px) {
+            margin-left:20px;
         }
     }
 }
