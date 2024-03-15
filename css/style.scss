@@ -1,23 +1,5 @@
 /****** General ***********/
-// Variables
-$background-color: #eaeaea;
-/* fonds gris */
-$greenligth-color: #99E2D0;
-/* vert clair */
-$green-color: #008766;
-/* vert foncé */
-$blueligth-color: #89C8FA;
-/* bleu clair */
-$blue-color: #003A68;
-/* bleu foncé */
-$mauve-color: #9356DC;
-/* mauve */
-$mauve-second-color: #FF79DA;
-/* mauve */
-$grey-color: #353535;
-/* gris-clair */
-$greyligth-color: #F6F6F6;
-/* gris-clair */
+@import 'variables';
 
 * {
     font-family: 'Roboto';
@@ -83,6 +65,61 @@ h3 {
         font-weight: bold;
     }
 }
+/***** LOADER *****/  
+.contain_loader{
+    position:fixed;
+    top:0;right:0;bottom:0;left:0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin-fade-out 0s 3s forwards;
+    z-index: 999;
+  }
+    .loader{
+    width: 100px;
+    height: 100px;
+    border-top: 5px solid $mauve-color;
+    border-radius: 50%;
+    animation: 1500ms spin linear infinite;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tour-eiffel {
+    width:105px;
+    height: 105px;
+    color:#9356dc;
+    animation: 2000ms spin2 linear infinite;
+  }
+  .loader::before{
+    width: 100px;
+    height: 100px;
+    content:"";
+    position:absolute;
+    width: inherit;
+    height: inherit;
+    border-bottom: 5px solid $mauve-second-color;
+    border-radius: 50%;
+  }
+  
+@keyframes spin{
+    0%   {transform:rotate(360deg)}
+    100% {transform:rotate(  0deg)}
+}
+@keyframes spin2{
+    0%   {transform:rotate(  0deg)}
+    100% {transform:rotate(360deg)}
+}
+@keyframes spin-fade-out {
+    0%   {transform: scaley(1)}
+    100% {transform: scaley(0)}
+}
+@keyframes spin2-fade-out {
+    0%   {transform: scaley(1)}
+    100% {transform: scaley(0)}
+}
+    /***** FIN LOADER *****/  
 
 body {
     max-width: 1440px;
