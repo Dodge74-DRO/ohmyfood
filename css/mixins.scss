@@ -1,0 +1,17 @@
+// Mixins
+@mixin coeur-plein{
+    font-size: 26px;
+    opacity: 0;
+    color: transparent;
+    background-image: linear-gradient(to bottom, $mauve-color, $mauve-second-color);
+    -webkit-background-clip: text;
+    background-clip:text;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    transition-delay: 500ms;
+    transition-duration: 500ms;
+    position: absolute;
+}
+@mixin coeur-vide{
+    font-size: 26px;
+}
