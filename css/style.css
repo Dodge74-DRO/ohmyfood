@@ -517,8 +517,7 @@ input[type=text] {
   display: flex;
   flex-direction: column;
 }
-
-.menu__image_plat_restaurant {
+.menu .menu__image_plat_restaurant {
   min-height: 275px;
   background-size: cover;
   background-position: center;
@@ -529,12 +528,12 @@ input[type=text] {
   height: 69px;
   border-radius: 32px 32px 0px 0px;
   margin-top: -55px;
-  background-color: white;
+  background-color: #F6F6F6;
   display: flex;
   justify-content: space-between;
   position: relative;
 }
-.menu_titre .menu_texte__titre {
+.menu_titre .menu_nom_restaurant {
   font-family: "shrikhand";
   font-size: 28px;
   font-weight: 400;
@@ -571,24 +570,28 @@ input[type=text] {
   opacity: 0;
 }
 
-.carte_menu {
+.menu-entrees-plats-desserts {
   display: flex;
   flex-direction: column;
-  padding: 42px 13px 40px 13px;
+  background-color: #F6F6F6;
+  padding: 0px 13px 40px 13px;
   gap: 40px;
 }
 
-.carte_entrees {
-  width: 94%;
+.menu_entrees,
+.menu_plats_principaux,
+.menu_desserts {
+  width: 100%;
   margin-top: 40px;
-  margin-left: 3%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
+  opacity: 0;
+  animation: menus-in 1s 0.5s forwards ease-out;
 }
 
-.carte_menu__sous-titre {
+.section_menu__sous-titre {
   text-transform: uppercase;
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 5px;
@@ -596,13 +599,13 @@ input[type=text] {
   width: 40px;
 }
 
-.bouton_plat {
+.section_menu__bouton_plat {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.bouton_plat_bloc {
+.bouton_plat__bloc {
   background: white;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -613,15 +616,15 @@ input[type=text] {
   height: 69px;
   overflow: hidden;
 }
-.bouton_plat_bloc:hover {
+.bouton_plat__bloc:hover {
   filter: brightness(1.1);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 }
-.bouton_plat_bloc:hover > .bouton_plat_bloc_check {
+.bouton_plat__bloc:hover > .bouton_plat__bloc_check {
   animation: bloc-check__visible 0.8s forwards ease-in-out;
 }
 
-.bouton_plat_infos {
+.bouton_plat__infos {
   padding: 12px 16px 12px 15px;
   display: flex;
   flex-direction: column;
@@ -629,20 +632,20 @@ input[type=text] {
   width: 100%;
   min-width: 70%;
 }
-.bouton_plat_infos p, .bouton_plat_infos h4 {
+.bouton_plat__infos p, .bouton_plat__infos h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 90%;
 }
 
-.bouton_plat_info_texte {
+.bouton_plat__info_texte {
   display: flex;
   justify-content: space-between;
   font-size: 15px;
 }
 
-.bouton_plat_bloc_check {
+.bouton_plat__bloc_check {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -654,7 +657,7 @@ input[type=text] {
   animation: bloc-check__invisible 0.8s;
 }
 
-.bouton_plat_logo_check {
+.bouton_plat__logo_check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -686,19 +689,19 @@ input[type=text] {
     margin-right: -65px;
   }
 }
-.carte_entrees {
+.menu_entrees {
   opacity: 0;
-  animation: menus-in 1s 0.5s forwards ease-out;
+  animation: menus-in 0.4s 0.4s forwards ease-out;
 }
 
-.plats {
+.menu_plats_principaux {
   opacity: 0;
-  animation: menus-in 1s 1s forwards ease-out;
+  animation: menus-in 0.2s 0.8s forwards ease-out;
 }
 
-.desserts {
+.menu_desserts {
   opacity: 0;
-  animation: menus-in 1s 1.5s forwards ease-out;
+  animation: menus-in 0.1s 1s forwards ease-out;
 }
 
 @keyframes menus-in {
