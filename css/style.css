@@ -101,7 +101,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin-fade-out 0s 10ms forwards;
+  animation: spin-fade-out 0s 3s forwards;
   z-index: 9;
 }
 
@@ -326,7 +326,7 @@ input[type=text] {
   flex-direction: column;
   justify-content: space-between;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .restaurants {
     padding: 30px 0px 30px 0px;
   }
@@ -339,7 +339,7 @@ input[type=text] {
 .section_restaurants .section_restaurants__titre {
   margin-left: 2%;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .section_restaurants .section_restaurants__titre {
     margin-left: 12.5%;
   }
@@ -352,7 +352,7 @@ input[type=text] {
   margin-left: 2%;
   width: 96%;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .section_restaurants_cartes {
     flex-direction: row;
     margin-left: 12.5%;
@@ -466,7 +466,7 @@ input[type=text] {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .footer_bloc {
     flex-direction: row-reverse;
   }
@@ -477,7 +477,7 @@ input[type=text] {
   font-weight: 400;
   margin: 0px 0px 26px 0px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .footer_bloc .footer__titre {
     margin: 0px 20px 0px 50px;
   }
@@ -487,7 +487,7 @@ input[type=text] {
   flex-direction: column;
   gap: 11px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .footer_bloc .footer__mentions {
     flex-direction: row;
   }
@@ -504,23 +504,31 @@ input[type=text] {
 .footer_bloc .footer__lien .footer__lien__texte {
   margin: 0px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767.99px) {
   .footer_bloc .footer__txt_ss_logo {
     margin-left: 20px;
   }
 }
 
 /*** CARTE-MENU ***/
-.menu {
+.bloc_menu {
   width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
-.menu .menu__image_plat_restaurant {
+.bloc_menu .menu__image_plat_restaurant {
   min-height: 275px;
   background-size: cover;
   background-position: center;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu_titre {
@@ -530,22 +538,38 @@ input[type=text] {
   margin-top: -55px;
   background-color: #F6F6F6;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   position: relative;
+}
+@media (min-width: 767.99px) {
+  .menu_titre {
+    width: 73%;
+  }
 }
 .menu_titre .menu_nom_restaurant {
   font-family: "shrikhand";
   font-size: 28px;
   font-weight: 400;
   position: absolute;
-  left: 17px;
-  top: 32px;
+  left: 3%;
+  top: 40px;
+}
+@media (min-width: 767.99px) {
+  .menu_titre .menu_nom_restaurant {
+    left: 23%;
+  }
 }
 .menu_titre .menu__coeur--vide {
   font-size: 26px;
   position: absolute;
-  top: 32px;
-  right: 50px;
+  top: 44px;
+  right: 8%;
+}
+@media (min-width: 767.99px) {
+  .menu_titre .menu__coeur--vide {
+    right: 23%;
+  }
 }
 .menu_titre .menu__coeur--plein {
   font-size: 26px;
@@ -560,8 +584,13 @@ input[type=text] {
   transition-duration: 500ms;
   position: absolute;
   position: absolute;
-  top: 32px;
-  right: 50px;
+  top: 44px;
+  right: 8%;
+}
+@media (min-width: 767.99px) {
+  .menu_titre .menu__coeur--plein {
+    right: 23%;
+  }
 }
 .menu_titre .menu__coeur--plein:hover {
   opacity: 1;
@@ -571,11 +600,19 @@ input[type=text] {
 }
 
 .menu-entrees-plats-desserts {
+  width: 96%;
+  padding: 0 2% 0 2%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #F6F6F6;
-  padding: 0px 13px 40px 13px;
   gap: 40px;
+}
+@media (min-width: 767.99px) {
+  .menu-entrees-plats-desserts {
+    width: 43%;
+    padding: 0 15% 0 15%;
+  }
 }
 
 .menu_entrees,
@@ -615,13 +652,21 @@ input[type=text] {
   border-radius: 15px;
   height: 69px;
   overflow: hidden;
+  filter: brightness(1);
 }
 .bouton_plat__bloc:hover {
   filter: brightness(1.1);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 }
 .bouton_plat__bloc:hover > .bouton_plat__bloc_check {
-  animation: bloc-check__visible 0.8s forwards ease-in-out;
+  animation: bloc-check__visible 1s forwards ease-in-out;
+}
+.bouton_plat__bloc:hover::after {
+  filter: brightness(1.1);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.bouton_plat__bloc:hover::after > .bouton_plat__bloc_check {
+  animation: bloc-check__visible 1s forwards ease-in-out;
 }
 
 .bouton_plat__infos {
@@ -667,6 +712,25 @@ input[type=text] {
   width: 20px;
   border-radius: 50%;
   color: #99E2D0;
+}
+
+.bouton__commander {
+  width: 186px;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 57px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bouton__commander:hover {
+  filter: brightness(1.1);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes bloc-check__visible {

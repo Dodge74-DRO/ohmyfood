@@ -1,4 +1,3 @@
-
 /****** General ***********/
 @import 'variables';
 @import 'mixins';
@@ -106,7 +105,7 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin-fade-out 0s 10ms forwards;
+    animation: spin-fade-out 0s 3s forwards;
     z-index: 9;
 }
 
@@ -245,21 +244,7 @@ input[type='text'] {
 .bouton__explorez {
     width: 218px;
     height: 50px;
-    margin-top: 15px;
-    margin-bottom: 57px;
-    border-radius: 25px;
-    border: none;
-    color: white;
-    background: linear-gradient(to bottom right, $mauve-second-color, $mauve-color);
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-        filter: brightness(1.1);
-        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
-    }
+    @include bouton-gradient;
 }
 
 .fonctionnement {
@@ -315,11 +300,9 @@ input[type='text'] {
                 color: #7E7E7E;
                 z-index: 0;
                 filter: brightness(98%);
-
                 &:hover {
                     filter: brightness(100%);
                     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
-
                     .fonctionnement_bar_etape_bouton__logo {
                         color: $mauve-color;
                     }
@@ -349,7 +332,7 @@ input[type='text'] {
     flex-direction: column;
     justify-content: space-between;
 
-    @media (min-width: 768px) {
+    @media (min-width: 767.99px) {
         padding: 30px 0px 30px 0px;
     }
 }
@@ -361,7 +344,7 @@ input[type='text'] {
     .section_restaurants__titre {
         margin-left: 2%;
 
-        @media (min-width: 768px) {
+        @media (min-width: 767.99px) {
             margin-left: 12.5%;
         }
     }
@@ -374,7 +357,7 @@ input[type='text'] {
     margin-left: 2%;
     width: 96%;
 
-    @media (min-width: 768px) {
+    @media (min-width: 767.99px) {
         flex-direction: row;
         margin-left: 12.5%;
         width: 75%;
@@ -480,7 +463,7 @@ input[type='text'] {
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 768px) {
+    @media (min-width: 767.99px) {
         flex-direction: row-reverse;
     }
 
@@ -490,7 +473,7 @@ input[type='text'] {
         font-weight: 400;
         margin: 0px 0px 26px 0px;
 
-        @media (min-width: 768px) {
+        @media (min-width: 767.99px) {
             margin: 0px 20px 0px 50px;
         }
     }
@@ -500,7 +483,7 @@ input[type='text'] {
         flex-direction: column;
         gap: 11px;
 
-        @media (min-width: 768px) {
+        @media (min-width: 767.99px) {
             flex-direction: row;
         }
     }
@@ -520,14 +503,14 @@ input[type='text'] {
     }
 
     .footer__txt_ss_logo {
-        @media (min-width: 768px) {
+        @media (min-width: 767.99px) {
             margin-left: 20px;
         }
     }
 }
 
 /*** CARTE-MENU ***/
-.menu {
+.bloc_menu {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -539,14 +522,24 @@ input[type='text'] {
     }
 }
 
-
-.menu_titre {
+.menu{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu_titre{
+    width: 100%;
+    @media (min-width: 767.99px) {
+        width: 73%;
+    }
     height: 69px;
     border-radius: 32px 32px 0px 0px;
     margin-top: -55px;
     background-color:$greyligth-color;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
 
@@ -555,22 +548,31 @@ input[type='text'] {
         font-size: 28px;
         font-weight: 400;
         position: absolute;
-        left: 17px;
-        top: 32px;
+        left: 3%;
+        @media (min-width: 767.99px) {
+            left: 23%;
+        }
+        top: 40px;
     }
 
     .menu__coeur--vide {
         @include coeur-vide;
         position: absolute;
-        top: 32px;
-        right: 50px;
+        top: 44px;
+        right: 8%;
+        @media (min-width: 767.99px) {
+            right: 23%;
+        }
     }
 
     .menu__coeur--plein {
         @include coeur-plein;
         position: absolute;
-        top: 32px;
-        right: 50px;
+        top: 44px;
+        right: 8%;
+        @media (min-width: 767.99px) {
+            right: 23%;
+        }
     }
 
     .menu__coeur--plein:hover {
@@ -584,10 +586,16 @@ input[type='text'] {
 
 
 .menu-entrees-plats-desserts {
+    width: 96%;
+    padding: 0 2% 0 2%;
+    @media (min-width: 767.99px) {
+        width: 43%;
+        padding: 0 15% 0 15%;
+    }
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color:$greyligth-color;
-    padding: 0px 13px 40px 13px;
     gap: 40px;
 }
 
@@ -628,11 +636,19 @@ input[type='text'] {
     border-radius: 15px;
     height: 69px;
     overflow: hidden;
+    filter: brightness(1);
     &:hover {
     filter: brightness(1.1);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
        & > .bouton_plat__bloc_check {
-            animation: bloc-check__visible 0.8s forwards ease-in-out;
+            animation: bloc-check__visible 1s forwards ease-in-out;
+        }
+    }
+    &:hover::after {
+    filter: brightness(1.1);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+       & > .bouton_plat__bloc_check {
+            animation: bloc-check__visible 1s forwards ease-in-out;
         }
     }
 }
@@ -681,6 +697,11 @@ input[type='text'] {
     color: $greenligth-color;
 }
 
+.bouton__commander {
+    width: 186px;
+    height: 50px;
+    @include bouton-gradient;
+}
 
 @keyframes bloc-check__visible {
     from {
