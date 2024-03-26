@@ -92,11 +92,9 @@ h4 {
 
 /***** LOADER *****/
 .contain_loader {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: black;
   display: flex;
   align-items: center;
@@ -112,7 +110,9 @@ h4 {
   height: 100px;
   border-top: 5px solid #9356DC;
   border-radius: 50%;
-  animation: 1500ms spin cubic-bezier(0.14, 0.46, 0.79, 0.5) infinite;
+  /*animation: 1500ms spin cubic-bezier(.42, 0, .58, 1) infinite;*/
+  animation: 1500ms spin linear infinite;
+  border-bottom: 5px solid #FF79DA;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,17 +125,6 @@ h4 {
   position: relative;
   left: -27px;
   top: -2px;
-}
-
-.loader::before {
-  width: 100px;
-  height: 100px;
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  border-bottom: 5px solid #FF79DA;
-  border-radius: 50%;
 }
 
 @keyframes spin {
@@ -154,7 +143,6 @@ h4 {
 }
 /***** FIN LOADER *****/
 body {
-  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -170,6 +158,11 @@ body {
   width: 100%;
   height: 63px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 767.99px) {
+  .navbar {
+    box-shadow: none;
+  }
 }
 .navbar .navbar__bouton-retour {
   position: absolute;
@@ -188,13 +181,13 @@ body {
 
 /* MAIN */
 main {
-  background-color: #eaeaea;
+  background-color: #F6F6F6;
 }
 
 .localisation {
   width: 100%;
   height: 50px;
-  background-color: #F6F6F6;
+  background-color: #EAEAEA;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -206,26 +199,36 @@ main {
   flex-direction: row;
   gap: 19px;
 }
+@media (min-width: 767.99px) {
+  .localisation {
+    box-shadow: none;
+  }
+}
 
-input[type=text] {
+.localisation__input {
   width: 109px;
   height: 19px;
   border: none;
   font-size: 16px;
   font-weight: 500;
-  background-color: #F6F6F6;
+  background-color: #EAEAEA;
+}
+.localisation__input::-moz-placeholder {
+  color: black;
+}
+.localisation__input::placeholder {
+  color: black;
 }
 
 .entete_restaurants {
-  width: 84%;
-  margin-left: 8%;
-  margin-right: 8%;
-  margin-top: 39px;
+  width: 100%;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 18px;
 }
 
 .bouton__explorez {
@@ -246,10 +249,21 @@ input[type=text] {
   filter: brightness(1.1);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 }
+@media (min-width: 767.99px) {
+  .bouton__explorez {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+}
 
 .fonctionnement {
   background-color: white;
   padding: 48px 0px 60px 20px;
+}
+@media (min-width: 767.99px) {
+  .fonctionnement {
+    padding: 48px 12.5% 60px 12.5%;
+  }
 }
 .fonctionnement .fonctionnement_bar {
   padding: 0px 20px 0px 0px;
@@ -319,7 +333,6 @@ input[type=text] {
 /****** RESTAURANTS ******/
 .restaurants {
   width: 100%;
-  max-width: 1440px;
   padding: 59px 0px 66px 0px;
   box-sizing: border-box;
   display: flex;
@@ -438,14 +451,14 @@ input[type=text] {
 .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein {
   font-size: 26px;
   opacity: 0;
-  color: transparent;
   background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  transition-delay: 500ms;
-  transition-duration: 500ms;
+  transition-delay: 300ms;
+  transition-duration: 400ms;
   position: absolute;
   position: absolute;
   bottom: 33px;
@@ -453,9 +466,6 @@ input[type=text] {
 }
 .carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover {
   opacity: 1;
-}
-.carte_restaurant_bas__coeur .carte_restaurant_bas__coeur--plein:hover::after {
-  opacity: 0;
 }
 
 /*** FOOTER ***/
@@ -519,8 +529,10 @@ input[type=text] {
 }
 .bloc_menu .menu__image_plat_restaurant {
   min-height: 275px;
-  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-position: center;
+  height: 385px;
 }
 
 .menu {
@@ -536,10 +548,9 @@ input[type=text] {
   height: 69px;
   border-radius: 32px 32px 0px 0px;
   margin-top: -55px;
-  background-color: #F6F6F6;
+  background-color: #EAEAEA;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative;
 }
 @media (min-width: 767.99px) {
@@ -574,14 +585,14 @@ input[type=text] {
 .menu_titre .menu__coeur--plein {
   font-size: 26px;
   opacity: 0;
-  color: transparent;
   background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  transition-delay: 500ms;
-  transition-duration: 500ms;
+  transition-delay: 300ms;
+  transition-duration: 400ms;
   position: absolute;
   position: absolute;
   top: 44px;
@@ -595,9 +606,6 @@ input[type=text] {
 .menu_titre .menu__coeur--plein:hover {
   opacity: 1;
 }
-.menu_titre .menu__coeur--plein:hover::after {
-  opacity: 0;
-}
 
 .menu-entrees-plats-desserts {
   width: 96%;
@@ -605,7 +613,7 @@ input[type=text] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F6F6F6;
+  background-color: #EAEAEA;
   gap: 40px;
 }
 @media (min-width: 767.99px) {
@@ -625,7 +633,7 @@ input[type=text] {
   justify-content: space-between;
   gap: 12px;
   opacity: 0;
-  animation: menus-in 1s 0.5s forwards ease-out;
+  animation: menus-affichage 1s 0.5s forwards ease-out;
 }
 
 .section_menu__sous-titre {
@@ -755,20 +763,20 @@ input[type=text] {
 }
 .menu_entrees {
   opacity: 0;
-  animation: menus-in 0.4s 0.4s forwards ease-out;
+  animation: menus-affichage 0.4s 0.4s forwards ease-out;
 }
 
 .menu_plats_principaux {
   opacity: 0;
-  animation: menus-in 0.2s 0.8s forwards ease-out;
+  animation: menus-affichage 0.2s 0.8s forwards ease-out;
 }
 
 .menu_desserts {
   opacity: 0;
-  animation: menus-in 0.1s 1s forwards ease-out;
+  animation: menus-affichage 0.1s 1s forwards ease-out;
 }
 
-@keyframes menus-in {
+@keyframes menus-affichage {
   from {
     opacity: 0;
     transform: translatey(-20%);

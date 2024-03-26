@@ -96,14 +96,16 @@ h4 {
 
 /***** LOADER *****/
 .contain_loader {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin-fade-out 0s 3.0s forwards;
+    animation: spin-fade-out 0s 3s forwards;
     z-index: 9;
 }
 
@@ -114,9 +116,7 @@ h4 {
     height: 100px;
     border-top: 5px solid $mauve-color;
     border-radius: 50%;
-    /*animation: 1500ms spin cubic-bezier(.42, 0, .58, 1) infinite;*/
-    animation: 1500ms spin linear infinite;
-    border-bottom: 5px solid $mauve-second-color;
+    animation: 1500ms spin cubic-bezier(.14, .46, .79, .5) infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,10 +131,22 @@ h4 {
     top: -2px;
 }
 
+.loader::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-bottom: 5px solid $mauve-second-color;
+    border-radius: 50%;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg)
     }
+
     100% {
         transform: rotate(360deg)
     }
@@ -150,6 +162,7 @@ h4 {
 /***** FIN LOADER *****/
 
 body {
+    /*max-width: 1440px;*/
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
@@ -165,9 +178,6 @@ body {
     width: 100%;
     height: 63px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-    @media (min-width: 767.99px) {
-        box-shadow: none;
-    }
 
     .navbar__bouton-retour {
         position: absolute;
@@ -201,60 +211,45 @@ main {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    @media (min-width: 767.99px) {
-        box-shadow: none;
-    }
-   margin-top: 0px;
+    margin-top: 0px;
     margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     gap: 19px;
 }
 
-.localisation__input {
+input[type='text'] {
     width: 109px;
     height: 19px;
     border: none;
     font-size: 16px;
     font-weight: 500;
-    background-color: $greyligth-color;
-    &::placeholder{
-        color:black;
-    }
+/*    background-color: $greyligth-color;*/
 }
 
 
 .entete_restaurants {
-    width: 100%;
-    margin-top: 30px;
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 39px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap:18px;
 }
 
 
 .bouton__explorez {
     width: 218px;
     height: 50px;
-    margin-top: 15px;
-    margin-bottom: 57px;
     @include bouton-gradient;
-    @media (min-width: 767.99px) {
-        margin-top: 0px;
-        margin-bottom: 30px;
-    }
 }
 
 .fonctionnement {
     background-color: white;
     padding: 48px 0px 60px 20px;
-    @media (min-width: 767.99px) {
-        padding:48px 12.5% 60px 12.5%;
-    }
-
 
     .fonctionnement_bar {
         padding: 0px 20px 0px 0px;
@@ -295,7 +290,7 @@ main {
 
             .fonctionnement_bar_etape__bouton {
                 height: 72.38px;
-                background-color: $background-color;
+                background-color: $greyligth-color;
                 border-radius: 20px;
                 box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
                 padding-left: 33px;
@@ -330,6 +325,7 @@ main {
 /****** RESTAURANTS ******/
 .restaurants {
     width: 100%;
+    max-width: 1440px;
     padding: 59px 0px 66px 0px;
     box-sizing: border-box;
     display: flex;
@@ -347,6 +343,7 @@ main {
 
     .section_restaurants__titre {
         margin-left: 2%;
+
         @media (min-width: 767.99px) {
             margin-left: 12.5%;
         }
@@ -451,6 +448,10 @@ main {
 
     .carte_restaurant_bas__coeur--plein:hover {
         opacity: 1;
+    }
+
+    .carte_restaurant_bas__coeur--plein:hover::after {
+        opacity: 0;
     }
 }
 
@@ -578,6 +579,9 @@ main {
         opacity: 1;
     }
 
+    .menu__coeur--plein:hover::after {
+        opacity: 0;
+    }
 }
 
 
@@ -605,7 +609,7 @@ main {
     justify-content: space-between;
     gap: 12px;
 	opacity: 0;
-	animation: menus-affichage 1s 0.5s forwards ease-out;
+	animation: menus-in 1s 0.5s forwards ease-out;
 }
 
 .section_menu__sous-titre {
@@ -696,8 +700,6 @@ main {
 .bouton__commander {
     width: 186px;
     height: 50px;
-    margin-top: 15px;
-    margin-bottom: 57px;
     @include bouton-gradient;
 }
 
@@ -726,17 +728,17 @@ main {
 }
 .menu_entrees {
 	opacity: 0;
-	animation: menus-affichage 0.4s 0.4s forwards ease-out;
+	animation: menus-in 0.4s 0.4s forwards ease-out;
 }
 .menu_plats_principaux {
 	opacity: 0;
-	animation: menus-affichage 0.2s 0.8s forwards ease-out;
+	animation: menus-in 0.2s 0.8s forwards ease-out;
 }
 .menu_desserts {
 	opacity: 0;
-	animation: menus-affichage 0.1s 1.0s forwards ease-out;
+	animation: menus-in 0.1s 1.0s forwards ease-out;
 }
-@keyframes menus-affichage {
+@keyframes menus-in {
     from {
         opacity: 0;
         transform: translatey(-20%);

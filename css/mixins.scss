@@ -2,14 +2,14 @@
 @mixin coeur-plein{
     font-size: 26px;
     opacity: 0;
-    color: transparent;
     background-image: linear-gradient(to bottom, $mauve-color, $mauve-second-color);
-    -webkit-background-clip: text;
     background-clip:text;
+    -webkit-background-clip: text;
+    color: transparent;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
-    transition-delay: 500ms;
-    transition-duration: 500ms;
+    transition-delay: 300ms;
+    transition-duration: 400ms;
     position: absolute;
 }
 @mixin coeur-vide{
@@ -17,8 +17,6 @@
 }
 
 @mixin bouton-gradient{
-margin-top: 15px;
-margin-bottom: 57px;
 border-radius: 25px;
 border: none;
 color: white;
