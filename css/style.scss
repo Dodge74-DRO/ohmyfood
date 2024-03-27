@@ -112,14 +112,13 @@ h5 {
 }
 
 .loader {
-    position: relative;
-    left: 50px;
+    margin:auto;
     width: 100px;
     height: 100px;
+    margin:auto;
     border-radius: 50%;
     border-top: 5px solid $mauve-color;
     border-bottom: 5px solid $mauve-second-color;
-    /*animation: 1500ms spin cubic-bezier(.42, 0, .58, 1) infinite;*/
     animation: 1500ms spin linear infinite;
     display: flex;
     align-items: center;
@@ -610,8 +609,6 @@ main {
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
-	opacity: 0;
-	animation: menus-affichage 1s 0.5s forwards ease-out;
 }
 
 .section_menu__sous-titre {
@@ -640,13 +637,6 @@ main {
     overflow: hidden;
     filter: brightness(1);
     &:hover {
-    filter: brightness(1.1);
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
-       & > .bouton_plat__bloc_check {
-            animation: bloc-check__visible 1s forwards ease-in-out;
-        }
-    }
-    &:hover::after {
     filter: brightness(1.1);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
        & > .bouton_plat__bloc_check {
