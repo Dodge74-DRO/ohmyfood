@@ -211,6 +211,10 @@ main {
   }
 }
 
+.fa-lg {
+  color: black;
+}
+
 .localisation__input {
   width: 109px;
   height: 19px;
